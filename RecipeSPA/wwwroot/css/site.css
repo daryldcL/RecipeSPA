@@ -2,7 +2,7 @@
 
 #main{
     font-family: Raleway,sans-serif;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 
@@ -11,28 +11,144 @@
 }
 
 #list{
-    /*width: 100%;*/
-    height: 600px;
-    background-color: antiquewhite;
-    margin: 10px 0 0 50px;
-    padding: 50px 50px 50px 50px;
-
+    text-align: center;
 }
+
 #list a{
-    display:block;
     text-align:left;
 }
 #list a i{
     text-align:right;
 }
 
-#searchField {
-    margin-left: 50px;
-    padding-left: 50px
+#list .list-group{
+    margin-bottom: 0;
 }
+
+#list ul {
+    margin: 8px auto 0 auto;
+}
+
+#list ul li a{
+    color: #555555;
+}
+
+#list ul li.active a{
+    background: #808080;
+    color: #fff;
+    border-color: #dddddd;
+}
+
+#greeting{
+    margin: 0 0 40px 0;
+    float:left;
+}
+
+#searchField {
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+}
+
 
 #calendar {
     width: 100%;
     height: 600px;
     background-color: darkred;
 }
+
+#btnNewRecipe{
+    margin-bottom: 20px;
+}
+
+#btnNewRecipe a {
+    text-align: center;
+}
+
+
+#list #select{
+    display: inline;
+    width: auto;
+    margin: 0 5px;
+}
+
+#leftPanel{
+    padding: 25px;
+}
+
+/* calendar */
+[ng-cloak] {
+    display: none;
+}
+
+body {
+    box-sizing: border-box;
+    padding: .3em;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+
+#calNav {
+    text-align: center;
+}
+
+#cal-week-box {
+    display: none;
+}
+
+#calcontainer {
+    top: -90px;
+}
+
+mwl-calendar .cal-day-today {
+    background-color: #dddddd;
+}
+
+
+/* Recipe Modal */
+
+#rhead{
+    height: 75px;
+    background-color: #808080
+}
+
+#rhead .title {
+font-size: 25px;
+position: relative;
+top: 50%;
+transform: translateY(-50%);
+font-weight: bold;
+float:left;
+}
+
+#rhead .servsize {
+    font-size: 20px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    float: right;    
+}
+
+#rhead .servsize label {
+    margin-right: 5px;
+    margin-top: 7px;
+}
+
+#rhead .servsize input {
+    color: #111111;
+    width: 40px;
+    text-align: center;
+}
+
+#rbody{
+    width: 500px;
+    height: 350px;
+}
+

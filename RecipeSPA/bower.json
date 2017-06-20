@@ -11,9 +11,17 @@
     "bootswatch": "3.3.5+2",
     "angular": "~1.6.4",
     "angular-route": "~1.6.4",
-    "travelmap": "~1.0.2"
+    "travelmap": "~1.0.2",
+    "angular-ui-calendar": "~1.0.2",
+    "interact-js": "~1.2.8",
+    "angular-ui-bootstrap": "~2.5.0",
+    "angular-bootstrap-calendar": "~0.29.2",
+    "rrule": "~2.2.0",
+    "angular-bootstrap-colorpicker": "~3.0.31",
+    "angular-material": "~1.1.4"
   },
   "resolutions": {
-    "angular": "~1.6.4"
+    "angular": "~1.6.4",
+    "jquery": ">= 1.7.2"
   }
 }

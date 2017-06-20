@@ -6,7 +6,13 @@
 
   <ItemGroup>
     <Content Include="wwwroot\css\site.css" />
-    <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\js\app.js" />
+    <Content Include="wwwroot\js\controllers\dialogController.js" />
+    <Content Include="wwwroot\js\controllers\recipeController.js" />
+    <Content Include="wwwroot\js\helpers.js" />
+    <Content Include="wwwroot\js\modalContent.html" />
+    <Content Include="wwwroot\views\modalContent.html" />
+    <Content Include="wwwroot\views\recipeModal.html" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.1.0" />
@@ -31,6 +37,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\js\directives\" />
   </ItemGroup>
 
 </Project>
