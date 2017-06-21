@@ -17,21 +17,12 @@
     <script src="~/lib/angular-material/angular-material.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/modal.js"></script>
-    
-
-    @*<script type="text/javascript" src="~/lib/moment/moment.js"></script>
-    <script type="text/javascript" src="~/lib/interact-js/interact.js"></script>
-    <script type="text/javascript" src="~/lib/angular/angular.min.js"></script>
-    <script type="text/javascript" src="~/lib/angular-animate/angular-animate.min.js"></script>
-    <script src="https://unpkg.com/angular-ui-bootstrap@2/dist/ui-bootstrap-tpls.js"></script>
-    <script type="text/javascript" src="~/lib/rrule/lib/rrule.js"></script>
-    <script type="text/javascript" src="~/lib/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.min.js"></script>
-    <script type="text/javascript" src="~/lib/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar.min.js"></script>*@
-
     <script type="text/javascript" src="~/js/app.js"></script>
     <script type="text/javascript" src="~/js/helpers.js"></script>
     <script type="text/javascript" src="~/js/controllers/dialogController.js"></script>
     <script type="text/javascript" src="~/js/controllers/recipeController.js"></script>
+    <script type="text/javascript" src="~/js/controllers/recipeListController.js"></script>
+    <script type="text/javascript" src="~/js/controllers/chipController.js"></script>
 }
 
     <div id="navigation">
@@ -59,7 +50,7 @@
 
     <div class="row">
         <div class="col-lg-offset-1 col-lg-3">
-            <div id="leftPanel" ng-controller="RecipeController as rcp">
+            <div id="leftPanel" ng-controller="RecipeListController as rcpl">
                 <div class="row">
                     <div id="searchField" class="col-lg-12">
                         <form class="navbar-form navbar-left" role="search" _lpchecked="1">
@@ -79,7 +70,7 @@
                             <a href="#" class="list-group-item">Recipe 3</a>
                         </div>
                         <div id="btnNewRecipe">
-                            <a href="#" class="btn btn-success btn-lg btn-block" ng-click="rcp.showModal()">+ Add New Recipe</a>
+                            <a href="#" class="btn btn-success btn-lg btn-block" ng-click="rcpl.showModal(true)">+ Add New Recipe</a>
                         </div>
 
                         <div id="pagination">
@@ -125,7 +116,7 @@
                             ng-click="vm.cellIsOpen = false">
                         Previous
                     </button>                    
-                    <h4 id="calTitle" class="text-center col-lg-2 col-lg-offset-3">{{ vm.calendarTitle }}</h4>
+                    <h4 id="calTitle" class="text-center col-lg-2 col-lg-offset-3" ng-cloak>{{ vm.calendarTitle }}</h4>
                     <button id="next" class="btn btn-primary col-lg-2 col-lg-offset-3"
                             mwl-date-modifier
                             date="vm.viewDate"

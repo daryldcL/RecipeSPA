@@ -1,21 +1,55 @@
 ﻿<div class="panel panel-success">
     <div id="rhead" class="panel-heading">
-        <h2 class="panel-title title">Panel success</h2>
-        <div class="servsize"><label for="size">Serving size: </label><input type="number" name="size" min="1" /></div>
+        <!--<h2 class="panel-title title">{{ recipe.recipeName }}</h2>-->
+        <input type="text" class="panel-title title" placeholder="Enter recipe name" ng-hide="recipe.editMode"/>
+        <div class="servsize">
+            <label for="size">Serving size: </label>
+            <input type="number" 
+                   name="serving" min="1" 
+                   ng-model="recipe.servingSize" 
+                   value="{{ recipe.servingSize }}"
+                   required
+            />
+        </div>
     </div>
     <div id="rbody" class="panel-body">
-        <form>
-            <input type="number" min="0.01" step="0.01" />
-            <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
-            <select>
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-            </select>
+        <form class="form-horizontal">
+            <fieldset>                
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="amtcnt">
+                            <input id="amount" ng-model="newIngredient.amount" class="form-control servsize" type="number" min="0.01" value="1" step="0.01" />
+                        </div>
+                        <select ng-model="newIngredient.measurement" class="form-control" id="measurement">
+                            <option>kilogram</option>
+                            <option>teaspoon</option>
+                            <option>tablespoon</option>
+                            <option>fluid oz</option>
+                        </select>
+                        <select ng-model="newIngredient.name" class="form-control" id="ingredient">
+                            <option>pork</option>
+                            <option>chicken</option>
+                            <option>beef</option>
+                        </select>
+                        <button class="btn btn-success btn-lg" ng-click="addIngredient()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </fieldset>
         </form>
+        <div id="ingrContainer">
+            <h5>Ingredients:</h5>
+            <!--<div ng-controller="chipController as ctrl" ng-cloak>-->
+
+                <md-chips ng-model="recipe.ingredients"></md-chips>
+                <!--<md-checkbox ng-model="ctrl.readonly">Readonly</md-checkbox>-->
+            <!--</div>-->
+        </div>
+
+        <div class="row" id="confirm">
+            <div class="col-lg-6 col-lg-offset-3">
+                <button class="btn btn-lg btn-danger col-lg-5" ng-click="cancel()">Cancel</button>
+                <button class="btn btn-lg btn-success col-lg-5 col-lg-offset-1" ng-click="save()">Save</button>
+            </div>
+        </div>
     </div>
 </div>
